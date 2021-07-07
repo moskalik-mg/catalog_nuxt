@@ -43,6 +43,7 @@ export default {
         const { data } = await this.$axios.get('/product')
         commit('SET_PRODUCTS', data)
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error)
       }
     },

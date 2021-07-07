@@ -421,3 +421,66 @@ html{
 .text-error{
     color: rgb(226, 28, 28);
 }
+
+@media screen and (max-width: 1200px) {
+
+    .catalog{
+
+        .product{
+
+            &__wrapper{
+                width: 33%;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .catalog{
+
+        .product{
+
+            &__wrapper{
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .aside{
+        padding: 0 10px;
+    }
+
+    .container{
+        padding: 0 10px;
+    }
+
+    .nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main{
+        flex-direction: column;
+    }
+
+    .cart{
+        width: 100%;
+    }
+
+    .catalog{
+        padding: 0 10px;
+
+        .product{
+            
+            &__wrapper{
+                width: 50%;
+            }
+        }
+    }
+}

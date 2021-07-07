@@ -485,4 +485,48 @@ html {
 .text-error {
   color: #e21c1c;
 }
+
+@media screen and (max-width: 1200px) {
+  .catalog .product__wrapper {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .catalog .product__wrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aside {
+    padding: 0 10px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cart {
+    width: 100%;
+  }
+  .catalog {
+    padding: 0 10px;
+  }
+  .catalog .product__wrapper {
+    width: 50%;
+  }
+}
 /*# sourceMappingURL=style.css.map */

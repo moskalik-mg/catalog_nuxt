@@ -31,7 +31,8 @@ export default {
   mixins: [imgSrc],
   props: {
     product: {
-      type: Object
+      type: Object,
+      default: () => {}
     }
   },
   computed: {

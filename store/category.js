@@ -25,6 +25,7 @@ export default {
         const { data } = await this.$axios.get('/product-category')
         commit('SET_CATEGORY', data)
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error)
       }
     }
