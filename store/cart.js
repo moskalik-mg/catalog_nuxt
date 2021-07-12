@@ -20,6 +20,13 @@ export default {
   },
   mutations: {
     ADD_PRODUCT_TO_CART (state, payload) {
+      const cart = JSON.parse(localStorage.getItem('cart'))
+      if (cart !== null) {
+        cart.push(payload)
+        localStorage.setItem('cart', JSON.stringify(cart))
+      } else {
+        localStorage.setItem('cart', JSON.stringify([payload]))
+      }
       state.cart.push(payload)
     },
     SWITCH_CART (state, payload) {
@@ -28,12 +35,16 @@ export default {
     REMOVE_PRODUCT (state, payload) {
       const newCartList = state.cart.filter(product => product.id !== payload)
       state.cart = newCartList
+      localStorage.setItem('cart', JSON.stringify(newCartList))
     },
     SET_ORDER_STATUS (state) {
       state.orderIsSuccess = true
     },
     EMPTY_CART (state) {
       state.cart = []
+    },
+    LOAD_PRODUCT (state, payload) {
+      state.cart = payload
     }
   },
   actions: {
@@ -60,6 +71,9 @@ export default {
     },
     setEmptyCart ({ commit }) {
       commit('EMPTY_CART')
+    },
+    loadProductFromLocalStorage ({ commit }, payload) {
+      commit('LOAD_PRODUCT', payload)
     }
   }
 }

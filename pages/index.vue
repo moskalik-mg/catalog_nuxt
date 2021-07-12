@@ -24,11 +24,16 @@ export default {
   async created () {
     await this.loadCategory()
     await this.loadProducts()
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    if (cart !== null) {
+      this.loadProductFromLocalStorage(cart)
+    }
   },
   methods: {
     ...mapActions({
       loadProducts: 'products/loadProducts',
-      loadCategory: 'category/loadCategory'
+      loadCategory: 'category/loadCategory',
+      loadProductFromLocalStorage: 'cart/loadProductFromLocalStorage'
     })
   }
 }
